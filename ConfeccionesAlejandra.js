@@ -20,5 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             alert('Por favor, completa todos los campos.');
         }
-    });
+    });   
 });
