@@ -50,39 +50,40 @@
         }
 
         .hero {
-            background-image: url('https://www.google.com/search?sca_esv=59a09235b25b809d&q=url+imagen+sobre+telas&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhdzTfxpAVBoexMFZnKJBpl_PqvG-U7jLA01U-4wZ8GtQRTLzY7AGc31mSzFEH8jDNpr7a4JGlmjT-zwIcXzAf-woi-NA4zCetR-9Z2fGJMIM2vbVUBSKCuV3NsAnG2NCupOyiGGfGa-n9g4HyxarGKjcpBUOc&sa=X&ved=2ahUKEwjCqqqLtPKIAxUoq5UCHcUIEasQtKgLegQIFRAB&biw=1366&bih=641'); 
+            background-image: url('extras/imagen.jpg');
+
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
-            color: white;
-            text-align: center;
+            padding: 230px 120px;
+            color: rgb(255, 217, 0);
+            background-color: rgba(0, 0, 0, 0.938);
+            text-align:  right;
+            
+            
         }
+
+        
+
+        
+
+
+
 
         .hero h2 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            margin-bottom: 220px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            transform: translateY(-280px);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: -250px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
 
-        .hero button {
-            background-color: #ff6f61;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
         .hero button:hover {
-            background-color: #e55b50;
+            background-color: #ffffff;
         }
 
         section {
@@ -91,9 +92,10 @@
 
         h2 {
             text-align: center;
-            font-size: 2.5rem;
-            color: #ff6f61;
-            margin-bottom: 40px;
+            font-size: 5rem;
+            color: #ffee00da;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgb(231, 85, 0);
         }
 
         .products-grid {
@@ -104,9 +106,9 @@
         }
 
         .product {
-            background-color: white;
+            background-color: rgb(168, 33, 16);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
             padding: 20px;
             text-align: center;
             width: 250px;
@@ -122,12 +124,12 @@
         .product h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #333;
+            color: #ffffff;
         }
 
         .product p {
             font-size: 1rem;
-            color: #666;
+            color: #ffffff;
         }
 
         .product:hover {
@@ -135,16 +137,16 @@
         }
 
         #contacto form {
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
-            background-color: white;
+            background-color: #ff6f61;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         #contacto form label {
-            font-weight: 600;
+            font-weight: 550;
             display: block;
             margin-bottom: 10px;
         }
@@ -152,15 +154,15 @@
 
         #contacto form input,
         #contacto form textarea {
-            width: 100%;
+            width: 90%;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid #ff6f61;
         }
 
         #contacto form button {
-            background-color: #ff6f61;
+            background-color: #df0000;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -171,11 +173,11 @@
         }
 
         #contacto form button:hover {
-            background-color: #e55b50;
+            background-color: #ffffff7a;
         }
 
         footer {
-            background-color: #333;
+            background-color: #ff6f61;
             color: white;
             padding: 20px;
             text-align: center;
@@ -184,6 +186,18 @@
         footer p {
             margin: 0;
         }
+
+
+
+
+        .products-grid .product a {
+            text-decoration: white; /* Elimina la subrayado de los enlaces */
+        }
+    
+        .products-grid .product a:hover {
+            text-decoration: white; /* Asegura que no aparezca al pasar el ratón */
+        }
+    
     </style>
 </head>
 <body>
@@ -200,11 +214,86 @@
 
     <section id="inicio">
         <div class="hero">
-            <h2>LOS MEJORES PRODUCTOS PARA TU HOGAR</h2>
-            <p>Edredones, sábanas, mandiles, toallas, cortinas y más</p>
-            <button id="conocenosBtn">Conócenos más</button>
+            <h2>ADQUIERE LOS MEJORES PRODUCTOS PARA TU HOGAR</h2>
+            <p> Edredones, sábanas,  mandiles, toallas, cortinas y mucho más</p>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="edredones/image/imagen1.jpg" alt="Producto" />
+                    </div>
+                    <div class="card-back">
+                        <img src="edredones/image/imagen1.jpg" alt="Producto" />
+                        <h2></h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    <style>
+        .card {
+            width: 300px; /* Ajusta el ancho de la tarjeta */
+            height: 400px; /* Ajusta la altura de la tarjeta */
+            perspective: 1000px; /* Para el efecto 3D */
+            margin-top: 20px; /* Espacio entre el texto y la tarjeta */
+        }
+    
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+    
+        .card:hover .card-inner {
+            transform: rotateY(180deg); /* Girar la tarjeta al pasar el mouse */
+        }
+    
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .card-front { 
+            background-color: #94771800; /* Color de fondo frontal */
+        }
+    
+        .card-back {
+            display: flex;
+            flex-direction: column; /* Para apilar el texto en la parte trasera */
+            justify-content: center;
+            align-items: center;
+            background-color: #ac392a00; /* Color de fondo trasero */
+            transform: rotateY(180deg); /* Girar la parte trasera */
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .card-back img {
+            max-width: 100%; /* Limita el ancho de la imagen */
+            max-height: 100%; /* Limita la altura de la imagen */
+            object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+        }
+    
+        .card-front img {
+            max-width: 100%; /* Limita el ancho de la imagen */
+            max-height: 100%; /* Limita la altura de la imagen */
+            object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+        }
+    </style>
+
+
+
+
+
+    
 
     <section id="productos">
         <h2>Nuestros Productos</h2>
@@ -270,9 +359,6 @@
             alert(titulo + "\n\n" + mensaje);
         }
         
-        document.getElementById('conocenosBtn').addEventListener('click', function() {
-            mostrarMensaje("¡Bienvenido a Confecciones Alejandra!", "Aquí encontrarás los mejores productos textiles de alta calidad.");
-        });
         
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
