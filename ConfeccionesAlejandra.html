@@ -54,10 +54,13 @@
 
             background-size: cover;
             background-position: center;
-            padding: 230px 120px;
+            padding: 180px 100px;
             color: rgb(255, 217, 0);
             background-color: rgba(0, 0, 0, 0.938);
             text-align:  right;
+            text-shadow: 
+            3px 3px 15px rgba(0, 0, 0, 0.8), /* Sombra oscura */
+            0 0 30px rgba(255, 255, 0, 0.7); /* Resplandor amarillo */
             
             
         }
@@ -79,7 +82,8 @@
         .hero p {
             font-size: 2rem;
             margin-bottom: -250px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8), /* Sombra oscura */
+            0 0 30px rgba(255, 255, 0, 0.7); /* Resplandor amarillo */
         }
 
         .hero button:hover {
@@ -95,7 +99,9 @@
             font-size: 5rem;
             color: #ffee00da;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgb(231, 85, 0);
+            text-shadow: 
+            3px 3px 15px rgba(0, 0, 0, 0.8), /* Sombra oscura */
+            0 0 30px rgba(255, 255, 0, 0.7); /* Resplandor amarillo */
         }
 
         .products-grid {
@@ -214,17 +220,18 @@
 
     <section id="inicio">
         <div class="hero">
-            <h2>ADQUIERE LOS MEJORES PRODUCTOS PARA TU HOGAR</h2>
-            <p> Edredones, sábanas,  mandiles, toallas, cortinas y mucho más</p>
+            <br> <br>  <br>   <h2>ADQUIERE LOS MEJORES PRODUCTOS PARA TU HOGAR</h2>
+            <p> <br> <br> <br>  Edredones, sábanas,  mandiles, <br> toallas, cortinas y mucho más</p>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
                         <img src="edredones/image/imagen1.jpg" alt="Producto" />
                     </div>
-                    <div class="card-back">
-                        <img src="edredones/image/imagen1.jpg" alt="Producto" />
-                        <h2></h2>
-                        <p></p>
+                    <div class="card-back">    
+                        <h3>%Aprovecha al maximo%</h2>
+                        <h5>Descuentos en edredones 
+                        hasta del 40% <br> y màs productos 
+                    en toda la tienda</p>
                     </div>
                 </div>
             </div>
@@ -236,6 +243,10 @@
             height: 400px; /* Ajusta la altura de la tarjeta */
             perspective: 1000px; /* Para el efecto 3D */
             margin-top: 20px; /* Espacio entre el texto y la tarjeta */
+            position: relative; 
+            border:  5px solid rgb(255, 0, 0);
+            left: -80px; 
+            top: -400px;
         }
     
         .card-inner {
@@ -261,7 +272,7 @@
         }
     
         .card-front { 
-            background-color: #94771800; /* Color de fondo frontal */
+            background-color: #e7bb2b00; /* Color de fondo frontal */
         }
     
         .card-back {
@@ -269,7 +280,7 @@
             flex-direction: column; /* Para apilar el texto en la parte trasera */
             justify-content: center;
             align-items: center;
-            background-color: #ac392a00; /* Color de fondo trasero */
+            background-color: #ff0000; /* Color de fondo trasero */
             transform: rotateY(180deg); /* Girar la parte trasera */
             width: 100%;
             height: 100%;
