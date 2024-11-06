@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "SABANA 1",
+        "price": 200,
+        "images": "images/sabana1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "SABANA 2",
+        "price": 200,
+        "images": "images/sabana2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "SABANA 3",
+        "price": 200,
+        "images": "images/sabana3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "SABANA 4",
+        "price": 200,
+        "images": "images/sabana4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "SABANA 5",
+        "price": 200,
+        "images": "images/sabana5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "SABANA 6",
+        "price": 200,
+        "images": "images/sabana6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "SABANA 7",
+        "price": 200,
+        "images": "images/sabana7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "SABANA 8",
+        "price": 200,
+        "images": "images/sabana8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "SABANA 9",
+        "price": 200,
+        "images": "images/sabana9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "SABANA 9",
+        "price": 200,
+        "images": "images/sabana9.jpg"
+    },
+    {
+        "id": 11,
+        "name": "SABANA 10",
+        "price": 200,
+        "images": "images/sabana10.jpg"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "TOALLA 1",
+        "price": 200,
+        "imaget": "imaget/toalla1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "TOALLA 2",
+        "price": 200,
+        "imaget": "imaget/toalla2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "TOALLA 3",
+        "price": 200,
+        "imaget": "imaget/toalla3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "TOALLA 4",
+        "price": 200,
+        "imaget": "imaget/toalla4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "TOALLA 5",
+        "price": 200,
+        "imaget": "imaget/toalla5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "TOALLA 6",
+        "price": 200,
+        "imaget": "imaget/toalla6.jpg"
+    }
+]
