@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #B22222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 1em;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #8B0000;
+        }
+
+        .sidebar ul li i {
+            font-size: 1.2em;
+        }
+
+        /* Contenido principal */
+        .content {
+            flex: 1;
+        }
+
+        header {
+            background-color: #B22222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .vendedor-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .vendedor-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: transform 0.3s;
+        }
+
+        .vendedor-image:hover {
+            transform: scale(1.1);
+        }
+
+        .logout-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0px 0px 5px #aaa;
+            z-index: 1000;
+            min-width: 120px;
+        }
+
+        .logout-options a {
+            display: block;
+            padding: 10px;
+            color: #B22222;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .logout-options a:hover {
+            background-color: #f2f2f2;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .dashboard-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 45%;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .stats .stat-item {
+            background-color: #B22222;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Confecciones Alejandra</h2>
+        <ul>
+            <li><i class="icon-dashboard"></i> Dashboard</li>
+            <li><i class="icon-clients"></i> Clientes</li>
+            <li><i class="icon-orders"></i> Órdenes</li>
+            <li><i class="icon-analytics"></i> Analíticas</li>
+            <li><i class="icon-products"></i> Productos</li>
+            <li><i class="icon-reports"></i> Reportes</li>
+            <li><i class="icon-settings"></i> Ajustes</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>Dashboard del Vendedor</h1>
+            <div class="profile-section">
+                <button class="vendedor-button" id="vendedorButton">
+                    <img src="fotovendedor.jpg" alt="Vendedor 1" class="vendedor-image">
+                    <span>Vendedor 1</span>
+                </button>
+                <div class="logout-options" id="logoutOptions">
+                    <a href="../ConfeccionesAlejandra.html" id="logout">Cerrar Sesión</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- Estadísticas rápidas -->
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>Ventas Totales</h3>
+                    <p>$25,000</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Clientes Nuevos</h3>
+                    <p>120</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Ventas del Mes</h3>
+                    <p>$8,000</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Reembolsos</h3>
+                    <p>$500</p>
+                </div>
+            </div>
+
+            <!-- Gráficos -->
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h2>Ventas Mensuales</h2>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Productos Más Vendidos</h2>
+                    <div class="chart-container">
+                        <canvas id="topProductsChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Porcentaje de Crecimiento</h2>
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Distribución de Ventas por Categoría</h2>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mostrar/Ocultar el menú de cierre de sesión
+        document.getElementById('vendedorButton').onclick = function() {
+            const logoutOptions = document.getElementById('logoutOptions');
+            logoutOptions.style.display = logoutOptions.style.display === 'block' ? 'none' : 'block';
+        };
+
+        // Configuración de gráficos
+        function createChart(context, type, data, options) {
+            return new Chart(context, {
+                type: type,
+                data: data,
+                options: options
+            });
+        }
+
+        const salesChartData = {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+            datasets: [{
+                label: 'Ventas',
+                data: [1200, 1900, 3000, 2500, 3200],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const salesChartOptions = {
+            scales: { y: { beginAtZero: true } }
+        };
+
+        const topProductsData = {
+            labels: ['Edredones', 'Mandiles', 'Sábanas', 'Toallas', 'Cortinas'],
+            datasets: [{
+                data: [300, 200, 150, 100, 50],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const categoryChartData = {
+            labels: ['Ropa de Cama', 'Mandiles', 'Toallas', 'Cortinas'],
+            datasets: [{
+                data: [40, 20, 25, 15],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
+            }]
+        };
+
+        window.onload = function() {
+            createChart(document.getElementById('salesChart').getContext('2d'), 'line', salesChartData, salesChartOptions);
+            createChart(document.getElementById('topProductsChart').getContext('2d'), 'bar', topProductsData);
+            createChart(document.getElementById('growthChart').getContext('2d'), 'line', salesChartData, salesChartOptions); // Reutilizando datos de ejemplo
+            createChart(document.getElementById('categoryChart').getContext('2d'), 'pie', categoryChartData);
+        };
+    </script>
+</body>
+</html>
