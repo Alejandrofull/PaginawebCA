@@ -14,6 +14,9 @@
             color: #333;
             margin: 0;
             display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
         }
 
         /* Sidebar */
@@ -60,6 +63,9 @@
         /* Contenido principal */
         .content {
             flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -69,6 +75,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px;
+            flex-wrap: wrap;
         }
 
         .profile-section {
@@ -96,10 +103,6 @@
             border-radius: 50%;
             border: 2px solid white;
             transition: transform 0.3s;
-        }
-
-        .vendedor-image:hover {
-            transform: scale(1.1);
         }
 
         .logout-options {
@@ -158,6 +161,7 @@
             gap: 15px;
             justify-content: space-around;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .stats .stat-item {
@@ -167,6 +171,86 @@
             border-radius: 8px;
             text-align: center;
             flex: 1;
+            min-width: 150px;
+        }
+
+        /* Media Queries */
+        
+        /* Tablet */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .sidebar h2, .sidebar ul li {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+
+            .chart-container {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .sidebar h2 {
+                display: none;
+            }
+
+            .sidebar ul {
+                font-size: 0.8em;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dashboard-grid {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -249,13 +333,11 @@
     </div>
 
     <script>
-        // Mostrar/Ocultar el menú de cierre de sesión
         document.getElementById('vendedorButton').onclick = function() {
             const logoutOptions = document.getElementById('logoutOptions');
             logoutOptions.style.display = logoutOptions.style.display === 'block' ? 'none' : 'block';
         };
 
-        // Configuración de gráficos
         function createChart(context, type, data, options) {
             return new Chart(context, {
                 type: type,
@@ -312,7 +394,7 @@
         window.onload = function() {
             createChart(document.getElementById('salesChart').getContext('2d'), 'line', salesChartData, salesChartOptions);
             createChart(document.getElementById('topProductsChart').getContext('2d'), 'bar', topProductsData);
-            createChart(document.getElementById('growthChart').getContext('2d'), 'line', salesChartData, salesChartOptions); // Reutilizando datos de ejemplo
+            createChart(document.getElementById('growthChart').getContext('2d'), 'line', salesChartData, salesChartOptions);
             createChart(document.getElementById('categoryChart').getContext('2d'), 'pie', categoryChartData);
         };
     </script>
