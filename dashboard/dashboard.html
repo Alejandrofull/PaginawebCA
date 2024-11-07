@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Estilos generales */
@@ -14,9 +13,7 @@
             color: #333;
             margin: 0;
             display: flex;
-            flex-direction: column;
             height: 100vh;
-            overflow: hidden;
         }
 
         /* Sidebar */
@@ -26,7 +23,7 @@
             color: white;
             display: flex;
             flex-direction: column;
-            padding-top: 20px;
+            padding: 20px;
         }
 
         .sidebar h2 {
@@ -39,31 +36,25 @@
         .sidebar ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         .sidebar ul li {
             padding: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
             color: white;
             font-size: 1em;
-            transition: background 0.3s;
             cursor: pointer;
+            transition: background 0.3s;
         }
 
         .sidebar ul li:hover {
             background-color: #8B0000;
         }
 
-        .sidebar ul li i {
-            font-size: 1.2em;
-        }
-
-        /* Contenido principal */
         .content {
             flex: 1;
-            overflow-y: auto;
             display: flex;
             flex-direction: column;
         }
@@ -75,7 +66,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px;
-            flex-wrap: wrap;
         }
 
         .profile-section {
@@ -89,10 +79,8 @@
             background-color: transparent;
             border: none;
             cursor: pointer;
-            padding: 0;
             display: flex;
             align-items: center;
-            gap: 10px;
             color: white;
             font-weight: bold;
         }
@@ -102,7 +90,6 @@
             height: 50px;
             border-radius: 50%;
             border: 2px solid white;
-            transition: transform 0.3s;
         }
 
         .logout-options {
@@ -115,7 +102,6 @@
             padding: 10px;
             box-shadow: 0px 0px 5px #aaa;
             z-index: 1000;
-            min-width: 120px;
         }
 
         .logout-options a {
@@ -132,6 +118,8 @@
 
         main {
             padding: 20px;
+            flex: 1;
+            overflow-y: auto;
         }
 
         .dashboard-grid {
@@ -153,18 +141,18 @@
 
         .chart-container {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
         }
 
         .stats {
             display: flex;
             gap: 15px;
             justify-content: space-around;
-            margin-bottom: 20px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
-        .stats .stat-item {
+        .stat-item {
             background-color: #B22222;
             color: white;
             padding: 15px;
@@ -175,68 +163,19 @@
         }
 
         /* Media Queries */
-        
-        /* Tablet */
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
 
+        @media (max-width: 768px) {
             .sidebar {
                 width: 100%;
                 height: auto;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 10px;
-            }
-
-            .sidebar h2, .sidebar ul li {
-                font-size: 0.9em;
-                padding: 10px;
+                justify-content: space-around;
             }
 
             .sidebar ul {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .content {
-                padding: 10px;
-            }
-
-            .stats {
-                flex-direction: column;
-            }
-
-            .card {
-                flex: 1 1 100%;
-            }
-
-            .chart-container {
-                max-width: 100%;
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 480px) {
-            .sidebar h2 {
-                display: none;
-            }
-
-            .sidebar ul {
-                font-size: 0.8em;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 10px;
+                justify-content: space-around;
             }
 
             .dashboard-grid {
@@ -247,9 +186,28 @@
                 flex: 1 1 100%;
             }
 
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
             .profile-section {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .dashboard-grid {
+                flex-direction: column;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .card {
+                width: 100%;
             }
         }
     </style>
@@ -258,13 +216,13 @@
     <div class="sidebar">
         <h2>Confecciones Alejandra</h2>
         <ul>
-            <li><i class="icon-dashboard"></i> Dashboard</li>
-            <li><i class="icon-clients"></i> Clientes</li>
-            <li><i class="icon-orders"></i> Órdenes</li>
-            <li><i class="icon-analytics"></i> Analíticas</li>
-            <li><i class="icon-products"></i> Productos</li>
-            <li><i class="icon-reports"></i> Reportes</li>
-            <li><i class="icon-settings"></i> Ajustes</li>
+            <li>Dashboard</li>
+            <li>Clientes</li>
+            <li>Órdenes</li>
+            <li>Analíticas</li>
+            <li>Productos</li>
+            <li>Reportes</li>
+            <li>Ajustes</li>
         </ul>
     </div>
 
@@ -282,7 +240,6 @@
             </div>
         </header>
         <main>
-            <!-- Estadísticas rápidas -->
             <div class="stats">
                 <div class="stat-item">
                     <h3>Ventas Totales</h3>
@@ -302,7 +259,6 @@
                 </div>
             </div>
 
-            <!-- Gráficos -->
             <div class="dashboard-grid">
                 <div class="card">
                     <h2>Ventas Mensuales</h2>
@@ -338,14 +294,6 @@
             logoutOptions.style.display = logoutOptions.style.display === 'block' ? 'none' : 'block';
         };
 
-        function createChart(context, type, data, options) {
-            return new Chart(context, {
-                type: type,
-                data: data,
-                options: options
-            });
-        }
-
         const salesChartData = {
             labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
             datasets: [{
@@ -355,10 +303,6 @@
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
-        };
-
-        const salesChartOptions = {
-            scales: { y: { beginAtZero: true } }
         };
 
         const topProductsData = {
@@ -392,10 +336,10 @@
         };
 
         window.onload = function() {
-            createChart(document.getElementById('salesChart').getContext('2d'), 'line', salesChartData, salesChartOptions);
-            createChart(document.getElementById('topProductsChart').getContext('2d'), 'bar', topProductsData);
-            createChart(document.getElementById('growthChart').getContext('2d'), 'line', salesChartData, salesChartOptions);
-            createChart(document.getElementById('categoryChart').getContext('2d'), 'pie', categoryChartData);
+            new Chart(document.getElementById('salesChart').getContext('2d'), { type: 'line', data: salesChartData });
+            new Chart(document.getElementById('topProductsChart').getContext('2d'), { type: 'bar', data: topProductsData });
+            new Chart(document.getElementById('growthChart').getContext('2d'), { type: 'line', data: salesChartData });
+            new Chart(document.getElementById('categoryChart').getContext('2d'), { type: 'pie', data: categoryChartData });
         };
     </script>
 </body>
