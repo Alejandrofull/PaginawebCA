@@ -76,30 +76,33 @@
         .cards-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 80px; /* Incrementa el espacio entre tarjetas */
             margin-top: 20px;
         }
-
+        
+        
         .card {
-            width: 200px;
-            height: 300px;
+            width: 220px; /* Ajusta el ancho para que todas las tarjetas tengan el mismo tamaño */
+            height: 320px; /* Ajusta la altura para uniformidad */
             perspective: 1000px;
             position: relative;
-            border: 2px solid rgb(255, 0, 0);
             transition: transform 0.6s ease;
+            border: none; /* Elimina cualquier borde en la tarjeta */
+            box-shadow: none; /* Asegúrate de que no haya sombra */
         }
-
+        
         .card-inner {
             width: 100%;
             height: 100%;
             transition: transform 0.6s;
             transform-style: preserve-3d;
+            border: none;
         }
-
+        
         .card:hover .card-inner {
             transform: rotateY(180deg);
         }
-
+        
         .card-front, .card-back {
             position: absolute;
             width: 100%;
@@ -110,19 +113,27 @@
             align-items: center;
             padding: 10px;
             text-align: center;
+            border: none; /* Sin borde en ambas caras */
         }
-
+        
         .card-front img {
-            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen se ajuste al tamaño del contenedor sin distorsión */
             border-radius: 5px;
         }
-
+        
         .card-back {
             background-color: #ff0000;
             color: white;
             transform: rotateY(180deg);
-            padding: 20px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
+        
 
         section {
             padding: 60px 20px;
@@ -245,14 +256,10 @@
             }
 
             .card {
-                width: 200px;
-                height: 300px;
-                perspective: 1000px;
-                position: relative;
-                /* Elimina o comenta la línea de abajo para quitar el borde */
-                /* border: 2px solid rgb(255, 0, 0); */
-                transition: transform 0.6s ease;
+                width: 90%;
+                height: 250px;
             }
+
             .products-grid {
                 flex-direction: column;
                 align-items: center;
@@ -311,7 +318,7 @@
 
     <section id="inicio">
         <div class="hero">
-            <h2>ADQUIERE LOS MEJORES PRODUCTOS PARA TU HOGAR</h2>
+            <h2>%ADQUIERE LOS MEJORES PRODUCTOS PARA TU HOGAR%</h2>
             <p>Edredones, sábanas, mandiles, toallas, cortinas y mucho más</p>
             <div class="cards-container">
                 <div class="card">
@@ -320,7 +327,6 @@
                             <img src="edredones/image/imagen1.jpg" alt="Producto Tigre">
                         </div>
                         <div class="card-back">
-                            <h4>%Aprovecha al máximo%</h4>
                             <h5>Descuentos en edredones hasta del 40% en toda la tienda</h5>
                         </div>
                     </div>
@@ -331,7 +337,6 @@
                             <img src="edredones/image/imagen2.jpg" alt="Producto 2">
                         </div>
                         <div class="card-back">
-                            <h4>%Descuento especial%</h4>
                             <h5>Ofertas exclusivas en sábanas</h5>
                         </div>
                     </div>
@@ -342,7 +347,6 @@
                             <img src="edredones/image/imagen3.jpg" alt="Producto 3">
                         </div>
                         <div class="card-back">
-                            <h4>%Promoción limitada%</h4>
                             <h5>Mandiles de cocina con un 30% de descuento</h5>
                         </div>
                     </div>
