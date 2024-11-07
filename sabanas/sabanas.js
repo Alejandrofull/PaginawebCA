@@ -1,5 +1,5 @@
 let iconCart = document.querySelector('.icon-cart');
-let closeCart = document.querySelector('.close')
+let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
 let listProductHTML = document.querySelector('.listProduct');
 let listCartHTML = document.querySelector('.listCart');
@@ -8,17 +8,31 @@ let iconCartSpan = document.querySelector('.icon-cart span');
 let listProduct = [];
 let carts = [];
 
+// Array de productos directamente en JavaScript
+const sabanas = [
+    { "id": 1, "name": "SABANA 1", "price": 200, "images": "images/sabana1.jpg" },
+    { "id": 2, "name": "SABANA 2", "price": 200, "images": "images/sabana2.jpg" },
+    { "id": 3, "name": "SABANA 3", "price": 200, "images": "images/sabana3.jpg" },
+    { "id": 4, "name": "SABANA 4", "price": 200, "images": "images/sabana4.jpg" },
+    { "id": 5, "name": "SABANA 5", "price": 200, "images": "images/sabana5.jpg" },
+    { "id": 6, "name": "SABANA 6", "price": 200, "images": "images/sabana6.jpg" },
+    { "id": 7, "name": "SABANA 7", "price": 200, "images": "images/sabana7.jpg" },
+    { "id": 8, "name": "SABANA 8", "price": 200, "images": "images/sabana8.jpg" },
+    { "id": 9, "name": "SABANA 9", "price": 200, "images": "images/sabana9.jpg" },
+    { "id": 10, "name": "SABANA 10", "price": 200, "images": "images/sabana10.jpg" }
+];
+
 iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart')
-})
+    body.classList.toggle('showCart');
+});
 
 closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart')
-})
+    body.classList.toggle('showCart');
+});
 
 const addDataToHTML = () => {
-    listProductHTML.innerHTML ='';
-    if(listProduct.length > 0){
+    listProductHTML.innerHTML = '';
+    if (listProduct.length > 0) {
         listProduct.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('item');
@@ -32,54 +46,49 @@ const addDataToHTML = () => {
                 </button>
             `;
             listProductHTML.appendChild(newProduct);
-        })
+        });
     }
-}
+};
 
 listProductHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
-    if(positionClick.classList.contains('addCart')){
+    if (positionClick.classList.contains('addCart')) {
         let product_id = positionClick.parentElement.dataset.id;
         addToCart(product_id);
     }
-})
+});
 
 const addToCart = (product_id) => {
     let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
-    if(carts.length <= 0){
-        carts = [{
-            product_id: product_id,
-            quantity: 1
-        }]
-    }else if(positionThisProductInCart < 0){
+    if (positionThisProductInCart < 0) {
         carts.push({
             product_id: product_id,
             quantity: 1
         });
-    }else{
-        carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
+    } else {
+        carts[positionThisProductInCart].quantity += 1;
     }
     addToCartHTML();
     addToCartToMemory();
-}
+};
 
 const addToCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(carts));
-}
+};
 
 const addToCartHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
-    if(carts.length > 0){
+    if (carts.length > 0) {
         carts.forEach(cart => {
-            totalQuantity = totalQuantity + cart.quantity;
+            totalQuantity += cart.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('item');
             newCart.dataset.id = cart.product_id;
             let positionProduct = listProduct.findIndex((value) => value.id == cart.product_id);
             let info = listProduct[positionProduct];
             newCart.innerHTML = `        
-            <div class = "images">
+            <div class="images">
                     <img src="${info.images}" alt="">
                 </div>
                 <div class="name">
@@ -94,36 +103,33 @@ const addToCartHTML = () => {
                     <span class="plus">></span>
                 </div>
             `;
-        listCartHTML.appendChild(newCart);
-        })
+            listCartHTML.appendChild(newCart);
+        });
     }
     iconCartSpan.innerText = totalQuantity;
-}
+};
 
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+    if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
         let product_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if(positionClick.classList.contains('plus')){
-            type = 'plus';
-        }
+        let type = positionClick.classList.contains('plus') ? 'plus' : 'minus';
         changeQuantity(product_id, type);
     }
-})
+});
 
 const changeQuantity = (product_id, type) => {
     let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
-    if(positionItemInCart >= 0){
-        switch (type){
+    if (positionItemInCart >= 0) {
+        switch (type) {
             case 'plus':
-                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+                carts[positionItemInCart].quantity += 1;
                 break;
-            default:
+            case 'minus':
                 let valueChange = carts[positionItemInCart].quantity - 1;
-                if(valueChange > 0){
+                if (valueChange > 0) {
                     carts[positionItemInCart].quantity = valueChange;
-                }else{
+                } else {
                     carts.splice(positionItemInCart, 1);
                 }
                 break;
@@ -131,19 +137,15 @@ const changeQuantity = (product_id, type) => {
     }
     addToCartToMemory();
     addToCartHTML();
-}
+};
 
 const initApp = () => {
-    fetch('sabanas.json')
-    .then(response => response.json())
-    .then(data => {
-        listProduct = data;
-        addDataToHTML();
+    listProduct = sabanas; // Asigna directamente los datos de sabanas
+    addDataToHTML();
 
-        if(localStorage.getItem('cart')){
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addToCartHTML();
-        }
-    })
-}
+    const storedCart = localStorage.getItem('cart');
+    carts = storedCart ? JSON.parse(storedCart) : [];
+    addToCartHTML();
+};
+
 initApp();
