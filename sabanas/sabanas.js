@@ -10,16 +10,16 @@ let carts = [];
 
 // Array de productos directamente en JavaScript
 const sabanas = [
-    { "id": 1, "name": "SABANA 1", "price": 200, "images": "images/sabana1.jpg" },
-    { "id": 2, "name": "SABANA 2", "price": 200, "images": "images/sabana2.jpg" },
-    { "id": 3, "name": "SABANA 3", "price": 200, "images": "images/sabana3.jpg" },
-    { "id": 4, "name": "SABANA 4", "price": 200, "images": "images/sabana4.jpg" },
-    { "id": 5, "name": "SABANA 5", "price": 200, "images": "images/sabana5.jpg" },
-    { "id": 6, "name": "SABANA 6", "price": 200, "images": "images/sabana6.jpg" },
-    { "id": 7, "name": "SABANA 7", "price": 200, "images": "images/sabana7.jpg" },
-    { "id": 8, "name": "SABANA 8", "price": 200, "images": "images/sabana8.jpg" },
-    { "id": 9, "name": "SABANA 9", "price": 200, "images": "images/sabana9.jpg" },
-    { "id": 10, "name": "SABANA 10", "price": 200, "images": "images/sabana10.jpg" }
+    { "id": 1, "name": "SABANA COLOR AZUL", "price": 20, "images": "images/sabana1.jpg" },
+    { "id": 2, "name": "SABANA ROSA", "price": 20, "images": "images/sabana2.jpg" },
+    { "id": 3, "name": "SABANA ROSA FLOREADA", "price": 20, "images": "images/sabana3.jpg" },
+    { "id": 4, "name": "SABANA VERDE FLOREADA", "price": 20, "images": "images/sabana4.jpg" },
+    { "id": 5, "name": "SABANA MULTICOLOR", "price": 20, "images": "images/sabana5.jpg" },
+    { "id": 6, "name": "SABANA FLOREADA", "price": 20, "images": "images/sabana6.jpg" },
+    { "id": 7, "name": "SABANA MULTICOLOR V2", "price": 20, "images": "images/sabana7.jpg" },
+    { "id": 8, "name": "SABANA PARIS", "price": 20, "images": "images/sabana8.jpg" },
+    { "id": 9, "name": "SABANA UNISEC", "price": 20, "images": "images/sabana9.jpg" },
+    { "id": 10, "name": "SABANA UNISEC V2", "price": 20, "images": "images/sabana10.jpg" }
 ];
 
 iconCart.addEventListener('click', () => {
@@ -42,7 +42,7 @@ const addDataToHTML = () => {
                 <h2>${product.name}</h2>
                 <div class ="price">$${product.price}</div>
                 <button class="addCart">
-                    Add To Cart
+                    Añadir al carrito
                 </button>
             `;
             listProductHTML.appendChild(newProduct);

@@ -4,18 +4,17 @@ let body = document.querySelector('body');
 let listProductHTML = document.querySelector('.listProduct');
 let listCartHTML = document.querySelector('.listCart');
 let iconCartSpan = document.querySelector('.icon-cart span');
-
 let listProduct = [];
 let carts = [];
 
 // Array de productos directamente en JavaScript
 const toallas = [
-    { "id": 1, "name": "TOALLA 1", "price": 200, "imaget": "imaget/toalla1.jpg" },
-    { "id": 2, "name": "TOALLA 2", "price": 200, "imaget": "imaget/toalla2.jpg" },
-    { "id": 3, "name": "TOALLA 3", "price": 200, "imaget": "imaget/toalla3.jpg" },
-    { "id": 4, "name": "TOALLA 4", "price": 200, "imaget": "imaget/toalla4.jpg" },
-    { "id": 5, "name": "TOALLA 5", "price": 200, "imaget": "imaget/toalla5.jpg" },
-    { "id": 6, "name": "TOALLA 6", "price": 200, "imaget": "imaget/toalla6.jpg" }
+    { "id": 1, "name": "TOALLA DELFIN", "price": 10, "imaget": "imaget/toalla1.jpg" },
+    { "id": 2, "name": "TOALLA MARINERO", "price": 10, "imaget": "imaget/toalla2.jpg" },
+    { "id": 3, "name": "TOALLA DOGS", "price": 10, "imaget": "imaget/toalla3.jpg" },
+    { "id": 4, "name": "TOALLA ROSA COLOR ENTERO", "price": 15, "imaget": "imaget/toalla4.jpg" },
+    { "id": 5, "name": "TOALLA VERDE COLOR ENTERO", "price": 15, "imaget": "imaget/toalla5.jpg" },
+    { "id": 6, "name": "TOALLA AZULA COLOR ENTERO", "price": 15, "imaget": "imaget/toalla6.jpg" }
 ];
 
 iconCart.addEventListener('click', () => {
@@ -38,7 +37,7 @@ const addDataToHTML = () => {
                 <h2>${product.name}</h2>
                 <div class ="price">$${product.price}</div>
                 <button class="addCart">
-                    Add To Cart
+                    Añadir al carrito
                 </button>
             `;
             listProductHTML.appendChild(newProduct);

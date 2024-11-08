@@ -10,9 +10,9 @@ let carts = [];
 
 // Array de productos directamente en JavaScript
 const cortinas = [
-    { "id": 1, "name": "CORTINA 1", "price": 200, "imagec": "imagec/cortina1.jpg" },
-    { "id": 2, "name": "CORTINA 2", "price": 200, "imagec": "imagec/cortina2.jpg" },
-    { "id": 3, "name": "CORTINA 3", "price": 200, "imagec": "imagec/cortina3.jpg" }
+    { "id": 1, "name": "CORTINA COLOR PIEL", "price": 30, "imagec": "imagec/cortina1.jpg" },
+    { "id": 2, "name": "CORTINA COLOR ROJO", "price": 30, "imagec": "imagec/cortina2.jpg" },
+    { "id": 3, "name": "CORTINA COLOR BLANCA", "price": 30, "imagec": "imagec/cortina3.jpg" }
 ];
 
 iconCart.addEventListener('click', () => {
@@ -35,7 +35,7 @@ const addDataToHTML = () => {
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <button class="addCart">
-                    Add To Cart
+                    Añadir al carrito
                 </button>
             `;
             listProductHTML.appendChild(newProduct);

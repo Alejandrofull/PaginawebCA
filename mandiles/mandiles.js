@@ -10,16 +10,16 @@ let carts = [];
 
 // Datos de los productos directamente en JavaScript
 const mandiles = [
-    { "id": 1, "name": "Mandil 1", "price": 200, "imagem": "imagem/mandil1.jpg" },
-    { "id": 2, "name": "Mandil 2", "price": 200, "imagem": "imagem/mandil2.jpg" },
-    { "id": 3, "name": "Mandil 3", "price": 200, "imagem": "imagem/mandil3.jpg" },
-    { "id": 4, "name": "Mandil 4", "price": 200, "imagem": "imagem/mandil4.jpg" },
-    { "id": 5, "name": "Mandil 5", "price": 200, "imagem": "imagem/mandil5.jpg" },
-    { "id": 6, "name": "Mandil 6", "price": 200, "imagem": "imagem/mandil6.jpg" },
-    { "id": 7, "name": "Mandil 7", "price": 200, "imagem": "imagem/mandil7.jpg" },
-    { "id": 8, "name": "Mandil 8", "price": 200, "imagem": "imagem/mandil8.jpg" },
-    { "id": 9, "name": "Mandil 9", "price": 200, "imagem": "imagem/mandil9.jpg" },
-    { "id": 10, "name": "Mandil 10", "price": 200, "imagem": "imagem/mandil10.jpg" }
+    { "id": 1, "name": "Mandil de tela azul", "price": 15, "imagem": "imagem/mandil1.jpg" },
+    { "id": 2, "name": "Mandil rayado negro", "price": 20, "imagem": "imagem/mandil2.jpg" },
+    { "id": 3, "name": "Mandil cuero", "price": 50, "imagem": "imagem/mandil3.jpg" },
+    { "id": 4, "name": "Mandil delantal celeste", "price": 25, "imagem": "imagem/mandil4.jpg" },
+    { "id": 5, "name": "Mandil tela azul", "price": 15, "imagem": "imagem/mandil5.jpg" },
+    { "id": 6, "name": "Mandil delantal rosa", "price": 25, "imagem": "imagem/mandil6.jpg" },
+    { "id": 7, "name": "Mandil camuflado", "price": 15, "imagem": "imagem/mandil7.jpg" },
+    { "id": 8, "name": "Mandil cocina azul", "price": 15, "imagem": "imagem/mandil8.jpg" },
+    { "id": 9, "name": "Mandil rayado v2", "price": 20, "imagem": "imagem/mandil9.jpg" },
+    { "id": 10, "name": "Mandil camuflado v2", "price": 15, "imagem": "imagem/mandil10.jpg" }
 ];
 
 // Evento para abrir el carrito
@@ -45,7 +45,7 @@ const addDataToHTML = () => {
                 <h2>${product.name}</h2>
                 <div class ="price">$${product.price}</div>
                 <button class="addCart">
-                    Add To Cart
+                    Añadir al carrito
                 </button>
             `;
             listProductHTML.appendChild(newProduct);

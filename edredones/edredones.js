@@ -31,7 +31,7 @@ const addDataToHTML = () => {
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <button class="addCart">
-                    Add To Cart
+                    Añadir al carrito
                 </button>
             `;
             listProductHTML.appendChild(newProduct);
@@ -146,16 +146,16 @@ const initApp = () => {
 
 // Datos de los productos (constante edredones)
 const edredones = [
-    { "id": 1, "name": "EDREDON DE TIGRE", "price": 200, "image": "image/imagen1.jpg" },
-    { "id": 2, "name": "EDREDON 2", "price": 200, "image": "image/imagen2.jpg" },
-    { "id": 3, "name": "EDREDON 3", "price": 200, "image": "image/imagen3.jpg" },
-    { "id": 4, "name": "EDREDON 4", "price": 200, "image": "image/imagen4.jpg" },
-    { "id": 5, "name": "EDREDON 5", "price": 200, "image": "image/imagen5.jpg" },
-    { "id": 6, "name": "EDREDON 6", "price": 200, "image": "image/imagen6.jpg" },
-    { "id": 7, "name": "EDREDON 7", "price": 200, "image": "image/imagen7.jpg" },
-    { "id": 8, "name": "EDREDON 8", "price": 200, "image": "image/imagen8.jpg" },
-    { "id": 9, "name": "EDREDON 9", "price": 200, "image": "image/imagen9.jpg" },
-    { "id": 10, "name": "EDREDON 10", "price": 200, "image": "image/imagen10.jpg" }
+    { "id": 1, "name": "EDREDON DE TIGRE", "price": 50, "image": "image/imagen1.jpg" },
+    { "id": 2, "name": "EDREDON PARIS", "price": 50, "image": "image/imagen2.jpg" },
+    { "id": 3, "name": "EDREDON CELESTE FLORAL", "price": 50, "image": "image/imagen3.jpg" },
+    { "id": 4, "name": "EDREDON TRICOLOR", "price": 50, "image": "image/imagen4.jpg" },
+    { "id": 5, "name": "EDREDON CELESTE GEOMETRICO", "price": 50, "image": "image/imagen5.jpg" },
+    { "id": 6, "name": "EDREDON ROJO Y MARRON", "price": 50, "image": "image/imagen6.jpg" },
+    { "id": 7, "name": "EDREDON GEOMETRICO OSCURO", "price": 50, "image": "image/imagen7.jpg" },
+    { "id": 8, "name": "EDREDON CUADROS CELESTES", "price": 50, "image": "image/imagen8.jpg" },
+    { "id": 9, "name": "EDREDON ESTRELLAS", "price": 50, "image": "image/imagen9.jpg" },
+    { "id": 10, "name": "EDREDON PETALOS", "price": 50, "image": "image/imagen10.jpg" }
 ];
 
 initApp();
