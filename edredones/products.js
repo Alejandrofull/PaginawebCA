@@ -1,70 +1,70 @@
 const products = [
     {
         "id": 1,
-        "name":" LD01 LOUNGE CHAIR",
+        "name": "Edredon de Tigre",
         "price": 200,
         "image": "./images/1.jpg",
-        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+        "description": "Edredon con figura de tigre, con capa extra para impedir el frío."
     },
     {
         "id": 2,
-        "name":" LD02 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 250,
         "image": "./images/2.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 3,
-        "name":" LD03 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 290,
         "image": "./images/3.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 4,
-        "name":" LD04 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/4.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 5,
-        "name":" LD05 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 300,
         "image": "./images/5.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 6,
-        "name":" LD06 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/6.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 7,
-        "name":" LD07 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/7.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 8,
-        "name":" LD08 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/8.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 9,
-        "name":" LD08 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/9.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
     },
     {
         "id": 10,
-        "name":" LD08 LOUNGE CHAIR",
+        "name": "Edredon",
         "price": 200,
         "image": "./images/10.jpg",
         "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
