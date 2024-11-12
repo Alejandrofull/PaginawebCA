@@ -69,3 +69,100 @@ chatInput.addEventListener("input", () => {
     chatInput.style.height = "auto";
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
+
+
+
+// Función para verificar si el usuario está logueado y mostrar el saludo
+document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const userName = localStorage.getItem('nombre');
+    
+    const loginLink = document.getElementById('login-link');
+    const userGreeting = document.getElementById('user-greeting');
+    
+    if (isLoggedIn === 'true' && userName) {
+        // Si el usuario está logueado, muestra el saludo y el enlace para cerrar sesión
+        userGreeting.textContent = `Hola, ${userName}`;
+        loginLink.textContent = "Cerrar Sesión";
+        loginLink.href = "#"; // Desactiva el enlace de redirección
+        
+        // Añade un evento para cerrar sesión al hacer clic
+        loginLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita que el enlace redireccione
+            logout();
+        });
+    }
+});
+
+// Función para cerrar sesión
+function logout() {
+    // Elimina los datos de sesión de localStorage
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+    
+    // Redirige a la página principal para actualizar el estado
+    window.location.href = 'ConfeccionesAlejandra.html';
+}
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    if (!validateEmail(email)) {
+        alert("Por favor ingresa un correo electrónico válido.");
+        return;
+    }
+    if (name.trim() === "") {
+        alert("Por favor ingresa tu nombre.");
+        return;
+    }
+    
+    mostrarMensaje("Mensaje Enviado", "Gracias por tu mensaje, nos pondremos en contacto contigo pronto.");
+    this.reset();
+    document.getElementById('success-message').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('success-message').style.display = 'none';
+    }, 3000);
+});
+window.onscroll = function() {scrollFunction()};
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function mostrarMensaje(titulo, mensaje) {
+    alert(titulo + "\n\n" + mensaje);
+}
+
+
+
+function scrollFunction() {
+const scrollToTopBtn = document.getElementById("scrollToTop");
+if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+scrollToTopBtn.style.display = "block";
+} else {
+scrollToTopBtn.style.display = "none";
+}
+}
+
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+
+
+

@@ -161,9 +161,6 @@ body.activeTabCart .container{
 .listCart .item:nth-child(even){
     background-color: #eee1;
 }
-/*  */
-
-/* detail page */
 
 .detail{
     display: grid;
